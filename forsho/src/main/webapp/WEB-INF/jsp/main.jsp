@@ -2,7 +2,7 @@
 <html>
 
 <head>
-	<title>Forsho</title>
+	<title>ForSho</title>
 	<link href="css/style.css" rel='stylesheet' type='text/css' />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="shortcut icon" type="image/x-icon" href="images/fav-icon.png" />
@@ -153,7 +153,7 @@
 								<div class="rateit">
 									<span> </span>
 								</div>
-								<div class="post-share">
+								<div class="post-share" id="sourse">
 									<span> </span>
 								</div>
 								<div class="clear"> </div>
@@ -177,7 +177,7 @@
 								<div class="rateit">
 									<span> </span>
 								</div>
-								<div class="post-share">
+								<div class="post-share" id="sourse">
 									<span> </span>
 								</div>
 								<div class="clear"> </div>
@@ -201,7 +201,7 @@
 								<div class="rateit">
 									<span> </span>
 								</div>
-								<div class="post-share">
+								<div class="post-share" id="sourse">
 									<span> </span>
 								</div>
 								<div class="clear"> </div>
@@ -225,104 +225,7 @@
 								<div class="rateit">
 									<span> </span>
 								</div>
-								<div class="post-share">
-									<span> </span>
-								</div>
-								<div class="clear"> </div>
-							</div>
-						</div>
-					</li>
-					<!--//-->
-					<li onclick="location.href='single-page.html';">
-						<img src="" width="282" height="auto">
-						<div class="post-info">
-							<div class="post-basic-info">
-								<h3>
-									<a href="#">Animation films</a>
-								</h3>
-								<span>
-									<a href="#">
-										<label> </label>Movies</a>
-								</span>
-								<p>Lorem Ipsum is simply dummy text of the printing & typesetting industry.</p>
-							</div>
-							<div class="post-info-rate-share">
-								<div class="rateit">
-									<span> </span>
-								</div>
-								<div class="post-share">
-									<span> </span>
-								</div>
-								<div class="clear"> </div>
-							</div>
-						</div>
-					</li>
-					<li onclick="location.href='single-page.html';">
-						<img src="" width="282" height="auto">
-						<div class="post-info">
-							<div class="post-basic-info">
-								<h3>
-									<a href="#">Animation films</a>
-								</h3>
-								<span>
-									<a href="#">
-										<label> </label>Movies</a>
-								</span>
-								<p>Lorem Ipsum is simply dummy text of the printing & typesetting industry.</p>
-							</div>
-							<div class="post-info-rate-share">
-								<div class="rateit">
-									<span> </span>
-								</div>
-								<div class="post-share">
-									<span> </span>
-								</div>
-								<div class="clear"> </div>
-							</div>
-						</div>
-					</li>
-					<li onclick="location.href='single-page.html';">
-						<img src="" width="282" height="auto">
-						<div class="post-info">
-							<div class="post-basic-info">
-								<h3>
-									<a href="#">Animation films</a>
-								</h3>
-								<span>
-									<a href="#">
-										<label> </label>Movies</a>
-								</span>
-								<p>Lorem Ipsum is simply dummy text of the printing & typesetting industry.</p>
-							</div>
-							<div class="post-info-rate-share">
-								<div class="rateit">
-									<span> </span>
-								</div>
-								<div class="post-share">
-									<span> </span>
-								</div>
-								<div class="clear"> </div>
-							</div>
-						</div>
-					</li>
-					<li onclick="location.href='single-page.html';">
-						<img src="" width="282" height="auto">
-						<div class="post-info">
-							<div class="post-basic-info">
-								<h3>
-									<a href="#">Animation films</a>
-								</h3>
-								<span>
-									<a href="#">
-										<label> </label>Movies</a>
-								</span>
-								<p>Lorem Ipsum is simply dummy text of the printing & typesetting industry.</p>
-							</div>
-							<div class="post-info-rate-share">
-								<div class="rateit">
-									<span> </span>
-								</div>
-								<div class="post-share">
+								<div class="post-share" id="sourse">
 									<span> </span>
 								</div>
 								<div class="clear"> </div>
@@ -347,7 +250,7 @@
 								<div class="rateit">
 									<span> </span>
 								</div>
-								<div class="post-share">
+								<div class="post-share" id="sourse">
 									<span> </span>
 								</div>
 								<div class="clear"> </div>
@@ -371,7 +274,7 @@
 								<div class="rateit">
 									<span> </span>
 								</div>
-								<div class="post-share">
+								<div class="post-share" id="sourse">
 									<span> </span>
 								</div>
 								<div class="clear"> </div>
@@ -395,7 +298,7 @@
 								<div class="rateit">
 									<span> </span>
 								</div>
-								<div class="post-share">
+								<div class="post-share" id="sourse">
 									<span> </span>
 								</div>
 								<div class="clear"> </div>
@@ -419,7 +322,104 @@
 								<div class="rateit">
 									<span> </span>
 								</div>
-								<div class="post-share">
+								<div class="post-share" id="sourse">
+									<span> </span>
+								</div>
+								<div class="clear"> </div>
+							</div>
+						</div>
+					</li>
+					<!--//-->
+					<li onclick="location.href='single-page.html';">
+						<img src="" width="282" height="auto">
+						<div class="post-info">
+							<div class="post-basic-info">
+								<h3>
+									<a href="#">Animation films</a>
+								</h3>
+								<span>
+									<a href="#">
+										<label> </label>Movies</a>
+								</span>
+								<p>Lorem Ipsum is simply dummy text of the printing & typesetting industry.</p>
+							</div>
+							<div class="post-info-rate-share">
+								<div class="rateit">
+									<span> </span>
+								</div>
+								<div class="post-share" id="sourse">
+									<span> </span>
+								</div>
+								<div class="clear"> </div>
+							</div>
+						</div>
+					</li>
+					<li onclick="location.href='single-page.html';">
+						<img src="" width="282" height="auto">
+						<div class="post-info">
+							<div class="post-basic-info">
+								<h3>
+									<a href="#">Animation films</a>
+								</h3>
+								<span>
+									<a href="#">
+										<label> </label>Movies</a>
+								</span>
+								<p>Lorem Ipsum is simply dummy text of the printing & typesetting industry.</p>
+							</div>
+							<div class="post-info-rate-share">
+								<div class="rateit">
+									<span> </span>
+								</div>
+								<div class="post-share" id="sourse">
+									<span> </span>
+								</div>
+								<div class="clear"> </div>
+							</div>
+						</div>
+					</li>
+					<li onclick="location.href='single-page.html';">
+						<img src="" width="282" height="auto">
+						<div class="post-info">
+							<div class="post-basic-info">
+								<h3>
+									<a href="#">Animation films</a>
+								</h3>
+								<span>
+									<a href="#">
+										<label> </label>Movies</a>
+								</span>
+								<p>Lorem Ipsum is simply dummy text of the printing & typesetting industry.</p>
+							</div>
+							<div class="post-info-rate-share">
+								<div class="rateit">
+									<span> </span>
+								</div>
+								<div class="post-share" id="sourse">
+									<span> </span>
+								</div>
+								<div class="clear"> </div>
+							</div>
+						</div>
+					</li>
+					<li onclick="location.href='single-page.html';">
+						<img src="" width="282" height="auto">
+						<div class="post-info">
+							<div class="post-basic-info">
+								<h3>
+									<a href="#">Animation films</a>
+								</h3>
+								<span>
+									<a href="#">
+										<label> </label>Movies</a>
+								</span>
+								<p>Lorem Ipsum is simply dummy text of the printing & typesetting industry.</p>
+							</div>
+							<div class="post-info-rate-share">
+								<div class="rateit">
+									<span> </span>
+								</div>
+								<div class="post-share" id="sourse">
 									<span> </span>
 								</div>
 								<div class="clear"> </div>
@@ -475,48 +475,68 @@
 				if (closeToBottom) {
 					// Get the first then items from the grid, clone them, and add them to the bottom of the grid
 					var $items = $('li', $tiles),
-						$firstTen = $items.slice(0, 1).clone(); //처음 10개의 item을 잘라낸다
-
+						$firstTen = $items.slice(0, 1).clone();
+					if (responseObject[num].source == "google") {
+						$("#sourse", $firstTen).removeClass();
+						$("#sourse", $firstTen).addClass("post-google");
+					} else {
+						$("#sourse", $firstTen).removeClass();
+						$("#sourse", $firstTen).addClass("post-share");
+					}
 					$firstTen.attr("onclick", "location.href='" + responseObject[num].link + "';");
-					$("img", $firstTen).attr("src", responseObject[num].imageurl); //이미지 변경
-					$("a:first", $firstTen).text(responseObject[num].title); //제목텍스트
-					$("a:eq(1)", $firstTen).text(responseObject[num].postdate); //분야텍스트
-					$("p", $firstTen).text(responseObject[num].description); //내용텍스트
+					$("img", $firstTen).attr("src", responseObject[num].imageurl);
+					$("a:first", $firstTen).text(responseObject[num].title);
+					$("a:eq(1)", $firstTen).text(responseObject[num].postdate);
+					$("p", $firstTen).text(responseObject[num].description);
 					
 					num += 1;
-					$tiles.append($firstTen); //수정된 타일들 추가
-					applyLayout(); //아마도 변경사랑 reload
+					$tiles.append($firstTen);
+					applyLayout();
 				}
 			};
 
 			// Capture scroll event.
-			$window.bind('scroll.wookmark', onScroll); //스크롤 변경이 감지되면 onScroll을 호출하라
+			$window.bind('scroll.wookmark', onScroll);
 		})(jQuery);
 
 
 		$(document).ready(function () {
+			setInterval(dataload,  1000 * 15)
+			dataload();
+		});
+
+		function dataload() {
 			var xhr = new XMLHttpRequest();
 			xhr.onload = function () {
-				if (xhr.status === 200) {
-					responseObject = JSON.parse(xhr.responseText); //json가져와 js객체로 변경
+				if (xhr.status === 200 && xhr.readyState === 4) {
+					responseObject = JSON.parse(xhr.responseText);
 
 					var $items = $('li', $tiles),
-						$firstTen = $items.slice(0, 12); //처음 10개의 item을 잘라낸다
+						$firstTen = $items.slice(0, 12);
 					for (var i = 0; i < 12; i++) {
 						$item = $firstTen.eq(i);
+
+						if (responseObject[i].source === "google") {
+							$("#sourse", $item).removeClass();
+							$("#sourse", $item).addClass("post-google");
+						} else {
+							$("#sourse", $item).removeClass();
+							$("#sourse", $item).addClass("post-share");
+						}
+						
 						$item.attr("onclick", "location.href='" + responseObject[i].link + "';");
-						$("img", $item).attr("src", responseObject[i].imageurl); //이미지 변경
-						$("a:first", $item).text(responseObject[i].title); //제목텍스트
-						$("a:eq(1)", $item).text(responseObject[i].postdate); //분야텍스트
-						$("p", $item).text(responseObject[i].description); //내용텍스트
+						$("img", $item).attr("src", responseObject[i].imageurl);
+						$("a:first", $item).text(responseObject[i].title);
+						$("a:eq(1)", $item).text(responseObject[i].postdate);
+						$("p", $item).text(responseObject[i].description);
 					}
 
 					applyLayout();
 				}
 			};
-			xhr.open('GET', 'http://localhost:8080/data', true); //요청 준비
-			xhr.send(null); //요청 전송
-		});
+			xhr.open('GET', 'http://localhost:8080/data', true);
+			xhr.send(null);
+		}
 	</script>
 	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.0/jquery.js">
 

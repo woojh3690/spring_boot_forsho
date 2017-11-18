@@ -41,9 +41,9 @@
 				<button id="explore" type="submit">탐험하기</button>
 			</form>
 			<br/>
-			<button type="submit" onclick="location.href='/hello'">회원가입</button>
+			<button type="submit" onclick="location.href='/signup'">회원가입</button>
 			<br/>
-			<a href="./find.html">
+			<a href="/find">
 				<p class="small">비밀번호가 기억나지 않나요?</p>
 			</a>
 		</div>

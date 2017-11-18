@@ -196,7 +196,7 @@ a.boxclose{
 /*--//userinfo--*/
 /*----start-post-grids----*/
 .post-share span{
-	background:url(../images/facebook.png) no-repeat 0px 0px;
+	background:url(../images/naver.png) no-repeat 0px 0px;
 	height:26px;
 	width:26px;
 	display:inline-block;
@@ -205,6 +205,18 @@ a.boxclose{
 	-moz-border-radius:30em;
 	-o-border-radius:30em;
 }
+
+.post-google span{
+	background:url(../images/google.png) no-repeat 0px 0px;
+	height:26px;
+	width:26px;
+	display:inline-block;
+	border-radius:30em;
+	-webkit-border-radius:30em;
+	-moz-border-radius:30em;
+	-o-border-radius:30em;
+}
+
 .post-share span:hover{
 	background:url(../images/facebookh.png) no-repeat 0px 0px;
 }
@@ -270,6 +282,12 @@ a.boxclose{
 	float:right;
 	margin-right:1.5em;
 }
+
+.post-google{
+	float:right;
+	margin-right:1.5em;
+}
+
 /*--footer--*/
 .footer{
 	position:fixed;

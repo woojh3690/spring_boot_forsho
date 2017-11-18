@@ -16,16 +16,22 @@ import woo.forsho.dao.ContentsDao;
 import woo.forsho.model.Contents;
 
 public class SaveGoogleDB extends Thread{
+	static int start = 0;
+	
+	private ShareNumber shareNumber;
 	
 	@Autowired
 	private ContentsDao contentsDao;
 	
 	@Override
 	public void run() {
+		shareNumber.setGoogleIsWorking(true);
+		
 		Document doc;
+		System.out.println("구글 시작 지점  : "+start);
 		try {
-			String keyWord = "라이젠";
-			String strUrl = "https://www.google.co.kr/search?q="+ keyWord +"&tbs=qdr:m,lr:lang_1ko&source=lnt&lr=lang_ko";
+			String keyWord = "스프링부트";
+			String strUrl = "https://www.google.co.kr/search?q="+ keyWord + "&start=" + start + "&tbs=qdr:y,lr:lang_1ko&source=lnt&lr=lang_ko";
 			doc = Jsoup.connect(strUrl).get();
 			
 			Elements elements = doc.select("h3.r");
@@ -56,8 +62,12 @@ public class SaveGoogleDB extends Thread{
 					contents.setPostdate(" ");
 				}
 				
-				contents.setImageurl(getImage(urlArray[i])); //넣는 소스 구하기 getImage(urlArray[i])
+				contents.setImageurl(getImage(urlArray[i]));
 				contentsDao.save(contents);
+				
+				if (start >= 10) {
+            		shareNumber.deleteGoogle();
+            	}
 			}
 			
 			if(titleArray.length == 10) {
@@ -65,8 +75,9 @@ public class SaveGoogleDB extends Thread{
 			} else {
 				System.out.println("saveGoogleDB의 파싱중 타이틀이 10개가 아님");
 			}
-			
+			start += 10;
 			System.out.println("구글 완료");
+			shareNumber.setGoogleIsWorking(false);
 		} catch (IOException e) {
 			System.out.println("saveGoogleDB 오류");
 			e.printStackTrace();
@@ -99,7 +110,6 @@ public class SaveGoogleDB extends Thread{
 			
 		} catch (IOException e) {
 			System.out.println("getImage 오류");
-			e.printStackTrace();
 		}
 		
 		return thumbnail;
@@ -119,13 +129,13 @@ public class SaveGoogleDB extends Thread{
 	        	size[0] = image.getWidth(null); //이미지 가로
 	 	        size[1] = image.getHeight(null); //이미지 세로
 	        }
-	        System.out.println(size[0] + "/"+size[1]);
+	        //System.out.println(size[0] + "/"+size[1]);
 	    } catch(MalformedURLException e) {
-	        e.printStackTrace();
+	        
 	    } catch(IOException e) {
-	        System.out.println("이미지 주소 오류");
+	    	
 	    } catch(NullPointerException e) {
-	    	e.printStackTrace();
+	    	
 	    }
 		
 		return size;
@@ -137,6 +147,14 @@ public class SaveGoogleDB extends Thread{
 
 	public void setContentsDao(ContentsDao contentsDao) {
 		this.contentsDao = contentsDao;
+	}
+
+	public ShareNumber getShareNumber() {
+		return shareNumber;
+	}
+
+	public void setShareNumber(ShareNumber shareNumber) {
+		this.shareNumber = shareNumber;
 	}
 	
 	

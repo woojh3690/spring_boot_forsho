@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <!DOCTYPE html>
 <html lang="utf-8">
 
@@ -24,11 +27,11 @@
 			<div class="box-header">
 				<h2>비밀번호 찾기</h2>
 			</div>
-			<label for="username">사용자</label>
+			<label for="username">아이디</label>
 			<br/>
 			<input type="text" id="username">
 			<br/>
-            <button type="submit" onclick = "location.href='#'">확인</button>
+            <button type="submit" onclick = "location.href='#'">찾기</button>
             <button type="submit" onclick = "location.href='./index.html'">뒤로가기</button>
 			<br/>
 		</div>

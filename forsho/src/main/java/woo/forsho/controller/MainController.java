@@ -19,9 +19,8 @@ public class MainController {
 	@Autowired
 	private UserTableDao userTableDao;
 	
-	//게시물 저장
 	@PostMapping("/login")
-	public String save(Usertable payload, Model model) {
+	public String login(Usertable payload, Model model) {
 		int result = 0;
 		List<Usertable> userTable;
 		userTable = userTableDao.findAll();
@@ -30,7 +29,6 @@ public class MainController {
 			if (userTable.get(i).getId().equals(payload.getId())) {
 				if (userTable.get(i).getPassword().equals(payload.getPassword())) {
 					result = 3;
-					
 					model.addAttribute("name", userTable.get(i).getName());
 					break;
 				} else {
@@ -44,6 +42,11 @@ public class MainController {
 		return "main";
 	}
 	
+	@PostMapping("/addaccount")
+	public String addaccount(Usertable payload, Model model) {
+		return "index";
+	}
+	
 	@GetMapping("/")	
 	public String index(Model model) {
 		return "index";
@@ -54,8 +57,14 @@ public class MainController {
 		return "main";
 	}
 	
-	@GetMapping("/hello")	
-	public String hello(Model model) {
-		return "hello";
+	@GetMapping("/find")	
+	public String find(Model model) {
+		return "find";
 	}
+	
+	@GetMapping("/signup")	
+	public String signup(Model model) {
+		return "signup";
+	}
+	
 }

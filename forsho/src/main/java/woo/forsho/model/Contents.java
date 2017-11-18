@@ -15,6 +15,10 @@ import javax.persistence.Table;
 @Table(name = "contents", catalog = "forsho")
 public class Contents implements java.io.Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Integer number;
 	private String source;
 	private String title;
