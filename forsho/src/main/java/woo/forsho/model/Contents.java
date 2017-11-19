@@ -20,6 +20,7 @@ public class Contents implements java.io.Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 	private Integer number;
+	private Integer userkey;
 	private String source;
 	private String title;
 	private String link;
@@ -34,8 +35,9 @@ public class Contents implements java.io.Serializable {
 		this.source = source;
 	}
 
-	public Contents(String source, String title, String link, String description, String postdate, String imageurl) {
+	public Contents(Integer userkey, String source, String title, String link, String description, String postdate, String imageurl) {
 		this.source = source;
+		this.setUserkey(userkey);
 		this.title = title;
 		this.link = link;
 		this.description = description;
@@ -107,6 +109,14 @@ public class Contents implements java.io.Serializable {
 
 	public void setImageurl(String imageurl) {
 		this.imageurl = imageurl;
+	}
+
+	public Integer getUserkey() {
+		return this.userkey;
+	}
+
+	public void setUserkey(Integer userkey) {
+		this.userkey = userkey;
 	}
 
 }

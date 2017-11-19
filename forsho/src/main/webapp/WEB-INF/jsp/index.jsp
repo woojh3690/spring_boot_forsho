@@ -29,7 +29,7 @@
 			<div class="box-header">
 				<h2>로그인</h2>
 			</div>
-			<form action="/login" method="post"> 
+			<form action="/login" method="post" id="form"> 
 				<label for="username">사용자</label>
 				<br/>
 				<input type="text" name="id">
@@ -40,9 +40,7 @@
 				<br/>
 				<button id="explore" type="submit">탐험하기</button>
 			</form>
-			<br/>
 			<button type="submit" onclick="location.href='/signup'">회원가입</button>
-			<br/>
 			<a href="/find">
 				<p class="small">비밀번호가 기억나지 않나요?</p>
 			</a>
@@ -50,10 +48,16 @@
 	</div>
 </body>
 
+<script type="text/javascript">var result = "${result}";</script>
 <script>
 	$(document).ready(function () {
 		$('#logo').addClass('animated fadeInDown');
 		$("input:text:visible:first").focus();
+
+		if (result.length > 4) {
+			var $tag = $('<br/><p>${result}</p>');
+			$('#form').append($tag);
+		}
 	});
 	$('#username').focus(function () {
 		$('label[for="username"]').addClass('selected');
@@ -67,7 +71,7 @@
 	$('#password').blur(function () {
 		$('label[for="password"]').removeClass('selected');
 	});
-
+	
 	/* $('#explore').click(function () {
 		var xhr = new XMLHttpRequest();
 		xhr.onload = function () {

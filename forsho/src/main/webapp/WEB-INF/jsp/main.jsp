@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <!DOCTYPE HTML>
 <html>
 
@@ -16,6 +19,10 @@
 	<!--webfonts-->
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
 	<!--//webfonts-->
+	<!--진행바-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+	<link rel="stylesheet" href="css/progress_style.css">
+	<!--//진행바-->
 	<!-- Global CSS for the page and tiles -->
 	<link rel="stylesheet" href="css/main.css">
 	<!-- //Global CSS for the page and tiles -->
@@ -110,8 +117,8 @@
 			</div>
 			<div class="top-searchbar">
 				<form>
-					<input type="text" />
-					<input type="submit" value="" />
+					<input type="text" id="strsearch"/>
+					<input type="submit" id="submitsearch" />
 				</form>
 			</div>
 			<div class="userinfo">
@@ -436,6 +443,7 @@
 	<script src="js/jquery.imagesloaded.js"></script>
 	<script src="js/jquery.wookmark.js"></script>
 
+	<script type="text/javascript">var valuekey = "${usertable.key}";</script>
 	<script type="text/javascript">
 		var responseObject;
 		var $tiles;
@@ -497,6 +505,7 @@
 
 			// Capture scroll event.
 			$window.bind('scroll.wookmark', onScroll);
+			$('#submitsearch');
 		})(jQuery);
 
 
@@ -534,15 +543,89 @@
 					applyLayout();
 				}
 			};
-			xhr.open('GET', 'http://localhost:8080/data', true);
-			xhr.send(null);
+			xhr.open('POST', 'http://localhost:8080/data', true);
+			xhr.setRequestHeader("Content-Type", "application/json");
+			xhr.send(JSON.stringify({search: $("#strsearch").val(), key: valuekey}));
 		}
 	</script>
-	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.0/jquery.js">
-
-
-	</script>
+	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.0/jquery.js"></script>
 	<!--//wookmark-scripts-->
+
+	<!--진행 스크립트-->
+	<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+	
+	  <script txt/javascipt>
+		$(document).ready(function () {
+		  var $pc = $('#progressController');
+		  var $pCaption = $('.progress-bar p');
+		  var iProgress = document.getElementById('inactiveProgress');
+		  var aProgress = document.getElementById('activeProgress');
+		  var iProgressCTX = iProgress.getContext('2d');
+	
+	
+		  drawInactive(iProgressCTX);
+	
+		  var width = 1;
+		  var id = setInterval(frame, 10);
+		  function frame() {
+			if (width >= 100) {
+			  clearInterval(id);
+			} else {
+			  width++;
+			  drawProgress(aProgress, width/100, $pCaption);
+			}
+		  }
+	
+		  function drawInactive(iProgressCTX) {
+			iProgressCTX.lineCap = 'square';
+	
+			//outer ring
+			iProgressCTX.beginPath();
+			iProgressCTX.lineWidth = 15;
+			iProgressCTX.strokeStyle = '#e1e1e1';
+			iProgressCTX.arc(137.5, 137.5, 129, 0, 2 * Math.PI);
+			iProgressCTX.stroke();
+	
+			//progress bar
+			iProgressCTX.beginPath();
+			iProgressCTX.lineWidth = 0;
+			iProgressCTX.fillStyle = '#e6e6e6';
+			iProgressCTX.arc(137.5, 137.5, 121, 0, 2 * Math.PI);
+			iProgressCTX.fill();
+	
+			//progressbar caption
+			iProgressCTX.beginPath();
+			iProgressCTX.lineWidth = 0;
+			iProgressCTX.fillStyle = '#fff';
+			iProgressCTX.arc(137.5, 137.5, 100, 0, 2 * Math.PI);
+			iProgressCTX.fill();
+	
+		  }
+		  function drawProgress(bar, percentage, $pCaption) {
+			var barCTX = bar.getContext("2d");
+			var quarterTurn = Math.PI / 2;
+			var endingAngle = ((2 * percentage) * Math.PI) - quarterTurn;
+			var startingAngle = 0 - quarterTurn;
+	
+			bar.width = bar.width;
+			barCTX.lineCap = 'square';
+	
+			barCTX.beginPath();
+			barCTX.lineWidth = 20;
+			barCTX.strokeStyle = '#76e1e5';
+			barCTX.arc(137.5, 137.5, 111, startingAngle, endingAngle);
+			barCTX.stroke();
+	
+			$pCaption.text((parseInt(percentage * 100, 10)) + '%');
+		  }
+	
+		  var percentage = $pc.val() / 100;
+		  drawProgress(aProgress, percentage, $pCaption);
+	
+	
+		});
+	  </script>
+	  <!--//진행 스크립트-->
 	<!--//End-wrap-->
 </body>
 

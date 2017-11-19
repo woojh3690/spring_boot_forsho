@@ -19,7 +19,7 @@ public class Scheduler {
 	ShareNumber shareNumber = new ShareNumber(contentsDao);
 	
 	/*1. 오후 05:50:00에 호출이 되는 스케쥴러 */
-	@Scheduled(fixedDelay=1000 * 15)//(cron = "30 * * * * *")(fixedDelay=1000 * 300)
+	//@Scheduled(fixedDelay=1000 * 15)//(cron = "30 * * * * *")(fixedDelay=1000 * 300)
 	public void cronTest1() {
 		System.out.println("스케쥴러 호출");
 		
